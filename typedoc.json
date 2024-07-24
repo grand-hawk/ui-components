@@ -1,0 +1,9 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "exclude": ["**/node_modules/**"],
+  "excludeExternals": true,
+  "skipErrorChecking": true,
+  "out": "docs"
+}
+

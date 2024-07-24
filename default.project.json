@@ -1,0 +1,25 @@
+{
+  "name": "grand-hawk-ui-components",
+  "globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
+  "tree": {
+    "$className": "DataModel",
+
+    "Workspace": {
+      "grand-hawk-ui-components": {
+        "$path": "dist",
+
+        "include": {
+          "$path": "include",
+
+          "node_modules": {
+            "$className": "Folder",
+
+            "@rbxts": {
+              "$path": "node_modules/@rbxts"
+            }
+          }
+        }
+      }
+    }
+  }
+}

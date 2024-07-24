@@ -1,0 +1,20 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# misc
+.DS_Store
+sourcemap.json
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+
+# package managers
+package-lock.json
+
+# production
+dist
+include
+docs

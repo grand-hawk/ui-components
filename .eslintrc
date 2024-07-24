@@ -1,0 +1,125 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:roblox-ts/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "jsx": true,
+    "useJSXTextNode": true,
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "roblox-ts",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": [
+    "/dist"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "consistent-return": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unstable-nested-components": [
+      "error",
+      {
+        "allowAsProps": true
+      }
+    ],
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "reservedFirst": [
+          "ref",
+          "key"
+        ]
+      }
+    ],
+    "no-param-reassign": "off",
+    "line-comment-position": [
+      "warn",
+      {
+        "position": "above"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-await-in-loop": "off",
+    "no-continue": "off",
+    "no-restricted-syntax": "off",
+    "no-console": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          [
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ],
+          "type"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "@typescript-eslint/array-type": [
+      "warn",
+      {
+        "default": "array-simple"
+      }
+    ],
+    "default-case": "off",
+    "no-nested-ternary": "off",
+    "no-duplicate-imports": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "fixStyle": "separate-type-imports"
+      }
+    ],
+    "@typescript-eslint/consistent-type-definitions": "error",
+    "@typescript-eslint/consistent-indexed-object-style": "error",
+    "@typescript-eslint/consistent-generic-constructors": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/require-default-props": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-unknown-property": "off",
+    "no-restricted-globals": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "no-shadow": "off",
+    "roblox-ts/lua-truthiness": "off",
+    "react/jsx-fragments": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
+
