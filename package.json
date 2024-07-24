@@ -3,7 +3,8 @@
   "author": "Astrid <git@astrid.email>",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "include"
   ],
   "homepage": "https://github.com/grand-hawk/ui-components",
   "repository": {
@@ -40,3 +41,4 @@
     "@rbxts/ui-labs": "2.2.0-test1"
   }
 }
+
