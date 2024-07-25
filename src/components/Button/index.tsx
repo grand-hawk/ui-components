@@ -11,7 +11,9 @@ export interface ButtonProps extends BoxProps<'textbutton'> {
   StrokeProps?: InstanceProps<UIStroke>;
 }
 
-export function Button(props: PropsWithChildren<ButtonProps>) {
+export function Button(componentProps: PropsWithChildren<ButtonProps>) {
+  const props = { ...componentProps };
+
   const strokeProps = props.StrokeProps;
   props.StrokeProps = undefined;
 

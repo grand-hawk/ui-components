@@ -8,9 +8,9 @@ Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components libr
 
 ## Installation
 
-```bash
-npm i @grand-hawk/ui-components
-```
+- `npm i @grand-hawk/ui-components`
+- Add `@grand-hawk` to your typeRoots
+- Add the `@grand-hawk` scope to your Rojo xxx.project.json
 
 ## Documentation
 
@@ -25,7 +25,7 @@ See the Typedoc [here](https://grand-hawk.github.io/ui-components).
 - [x] Typography
 - [x] Button
 - [ ] Slider
-- [ ] Input
+- [x] Input
 - [ ] Select
 - [ ] Card
 
