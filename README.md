@@ -25,6 +25,7 @@ See the Typedoc [here](https://grand-hawk.github.io/ui-components).
 - [x] Typography
 - [x] Button
 - [ ] Slider
+- [ ] Input
 - [ ] Select
 - [ ] Card
 
