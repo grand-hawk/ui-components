@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from '@rbxts/react';
 
 import { Button, type ButtonProps } from 'components/Button';
 import { useTheme } from 'components/ThemeProvider';
+import { mergeProps } from 'helpers';
 
 import type { InstanceProps, PropsWithChildren } from '@rbxts/react';
 
@@ -28,12 +29,15 @@ export function SecondaryButton(
     <Button
       BackgroundColor3={theme.background}
       Ref={buttonRef}
-      StrokeProps={{
-        Color: hover ? theme.primary : theme.primary60,
-        Thickness: 1,
-      }}
       TextColor3={theme.primary}
       {...props}
+      StrokeProps={mergeProps(
+        {
+          Color: hover ? theme.primary : theme.primary60,
+          Thickness: 1,
+        },
+        props.StrokeProps,
+      )}
     />
   );
 }

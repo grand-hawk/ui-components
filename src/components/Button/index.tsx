@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from '@rbxts/react';
+import React, { useState } from '@rbxts/react';
 
 import { Box } from 'components/Box';
 import { useTheme } from 'components/ThemeProvider';
+import { mergeFunctions } from 'helpers';
 
 import type { InstanceProps, PropsWithChildren } from '@rbxts/react';
 import type { BoxProps } from 'components/Box';
@@ -15,16 +16,7 @@ export function Button(props: PropsWithChildren<ButtonProps>) {
   props.StrokeProps = undefined;
 
   const theme = useTheme();
-  const buttonRef = useRef<TextButton>(undefined);
   const [hover, setHover] = useState<boolean>(false);
-
-  useEffect(() => {
-    const button = buttonRef.current;
-    if (!button) return;
-
-    button.MouseEnter.Connect(() => setHover(true));
-    button.MouseLeave.Connect(() => setHover(false));
-  });
 
   return (
     <Box
@@ -35,10 +27,20 @@ export function Button(props: PropsWithChildren<ButtonProps>) {
       Font={theme.fontBold}
       PaddingX={4}
       PaddingY={1.5}
-      Ref={props.Ref ?? buttonRef}
       TextColor3={hover ? theme.primary : theme.background}
       TextSize={16}
       {...props}
+      Event={{
+        ...props.Event,
+        MouseEnter: mergeFunctions(
+          () => setHover(true),
+          props.Event?.MouseEnter,
+        ),
+        MouseLeave: mergeFunctions(
+          () => setHover(false),
+          props.Event?.MouseLeave,
+        ),
+      }}
     >
       <uistroke
         ApplyStrokeMode={Enum.ApplyStrokeMode.Border}

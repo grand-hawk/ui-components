@@ -1,6 +1,6 @@
 {
   "name": "@grand-hawk/ui-components",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Astrid <git@astrid.email>",
   "main": "dist/init.lua",
   "types": "dist/index.d.ts",
