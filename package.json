@@ -38,7 +38,6 @@
     "eslint-plugin-roblox-ts": "^0.0.36",
     "prettier": "^3.3.3",
     "prettier-eslint": "^16.3.0",
-    "roblox-ts": "2.3.0-dev-576ad98",
     "tsup": "^8.2.3",
     "typedoc": "^0.26.5",
     "typedoc-material-theme": "^1.1.0",
@@ -47,6 +46,8 @@
   "dependencies": {
     "@rbxts/react": "^0.4.0",
     "@rbxts/react-roblox": "^0.4.0",
-    "@rbxts/ui-labs": "2.1.1"
+    "@rbxts/ui-labs": "^2.1.1",
+    "roblox-ts": "~2.3.0-dev-576ad98"
   }
 }
+
