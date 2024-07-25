@@ -21,7 +21,7 @@
     "build": "rbxtsc --type package && tsup src/index.ts --dts-only",
     "watch": "rbxtsc --type model -w",
     "format": "prettier -w .",
-    "lint": "eslint .",
+    "lint": "eslint src",
     "typedoc": "typedoc"
   },
   "devDependencies": {
@@ -50,4 +50,3 @@
     "roblox-ts": "^2.3.0-dev-576ad98"
   }
 }
-
