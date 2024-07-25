@@ -1,21 +1,24 @@
 {
   "name": "@grand-hawk/ui-components",
   "version": "0.1.1",
-  "author": "Astrid <git@astrid.email>",
-  "main": "dist/init.lua",
-  "types": "dist/index.d.ts",
+  "keywords": [
+    "roblox-ts",
+    "react",
+    "ui"
+  ],
+  "homepage": "https://github.com/grand-hawk/ui-components",
+  "bugs": "https://github.com/grand-hawk/ui-components/issues",
   "license": "MIT",
+  "author": "Astrid <git@astrid.email>",
   "files": [
     "dist",
     "include"
   ],
-  "homepage": "https://github.com/grand-hawk/ui-components",
+  "main": "dist/init.lua",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/grand-hawk/ui-components"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "scripts": {
     "build": "rbxtsc --type package && tsup src/index.ts --dts-only",
@@ -48,5 +51,8 @@
     "@rbxts/react-roblox": "^0.4.0",
     "@rbxts/ui-labs": "^2.1.1",
     "roblox-ts": "^2.3.0-dev-576ad98"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
