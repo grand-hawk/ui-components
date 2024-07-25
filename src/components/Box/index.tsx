@@ -13,6 +13,12 @@ export interface BaseBoxProps
 
   Ref?: Ref<unknown>;
 
+  PaddingProps?: InstanceProps<UIPadding>;
+
+  CornerProps?: InstanceProps<UICorner>;
+
+  ListLayoutProps?: InstanceProps<UIListLayout>;
+
   Padding?: number;
 
   PaddingX?: number;
@@ -43,6 +49,15 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
 
   const ref = props.Ref;
   props.Ref = undefined;
+
+  const paddingProps = props.PaddingProps;
+  props.PaddingProps = undefined;
+
+  const cornerProps = props.CornerProps;
+  props.CornerProps = undefined;
+
+  const listLayoutProps = props.ListLayoutProps;
+  props.ListLayoutProps = undefined;
 
   const padding = props.Padding ? new UDim(0, props.Padding * 8) : undefined;
   props.Padding = undefined;
@@ -87,22 +102,26 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
       ...props,
     },
     <Fragment>
-      {padding || paddingX || paddingY ? (
+      {padding || paddingX || paddingY || paddingProps ? (
         <uipadding
           PaddingBottom={paddingY}
           PaddingLeft={paddingX}
           PaddingRight={paddingX}
           PaddingTop={paddingY}
+          {...paddingProps}
         />
       ) : undefined}
 
-      {borderRadius ? <uicorner CornerRadius={borderRadius} /> : undefined}
+      {borderRadius || cornerProps ? (
+        <uicorner CornerRadius={borderRadius} {...cornerProps} />
+      ) : undefined}
 
       <uilistlayout
         FillDirection={direction}
         HorizontalAlignment={horizontalAlignment}
         Padding={new UDim(0, gap)}
         VerticalAlignment={verticalAlignment}
+        {...listLayoutProps}
       />
 
       {props.children}
