@@ -3,6 +3,8 @@
   "entryPoints": ["./src/index.ts"],
   "exclude": ["**/node_modules/**"],
   "excludeExternals": true,
+  "out": "docs",
+  "plugin": ["typedoc-material-theme"],
   "skipErrorChecking": true,
-  "out": "docs"
+  "themeColor": "#cb9820"
 }
