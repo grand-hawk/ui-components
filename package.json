@@ -2,6 +2,8 @@
   "name": "ui-components",
   "version": "0.0.1",
   "author": "Astrid <git@astrid.email>",
+  "main": "dist/init.lua",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "files": [
     "dist",
@@ -12,8 +14,11 @@
     "type": "git",
     "url": "https://github.com/grand-hawk/ui-components"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "rbxtsc --type package",
+    "build": "rbxtsc --type package && tsup src/index.ts --dts-only",
     "watch": "npm run build -- -w",
     "format": "prettier -w .",
     "lint": "eslint .",
@@ -34,6 +39,7 @@
     "prettier": "^3.3.3",
     "prettier-eslint": "^16.3.0",
     "roblox-ts": "2.3.0-dev-576ad98",
+    "tsup": "^8.2.3",
     "typedoc": "^0.26.5",
     "typescript": "^5.5.4"
   },
