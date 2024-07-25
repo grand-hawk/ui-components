@@ -10,7 +10,6 @@ jobs:
     permissions:
       id-token: write
       contents: write
-      pages: write
 
     runs-on: ubuntu-latest
 
@@ -34,7 +33,7 @@ jobs:
       - name: Build
         run: pnpm typedoc
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
