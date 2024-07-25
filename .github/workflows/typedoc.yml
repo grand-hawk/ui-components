@@ -1,11 +1,16 @@
 name: Lint
 
 on:
-  push:
-  pull_request:
+  release:
+    types: [created]
+  workflow_dispatch:
 
 jobs:
-  linting:
+  typedoc:
+    permissions:
+      id-token: write
+      packages: write
+
     runs-on: ubuntu-latest
 
     steps:
@@ -25,5 +30,10 @@ jobs:
       - name: Install packages
         run: pnpm install --frozen-lockfile
 
-      - name: Run ESLint
-        run: pnpm lint
+      - name: Build
+        run: pnpm typedoc
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs
