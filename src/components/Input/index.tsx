@@ -33,7 +33,7 @@ export function Input(componentProps: PropsWithChildren<InputProps>) {
       PaddingX={2}
       PaddingY={1.5}
       PlaceholderColor3={theme.primary60}
-      PlaceholderText="Placeholder"
+      PlaceholderText=""
       Size={UDim2.fromScale(1, 0)}
       Text=""
       TextColor3={disabled ? theme.primary60 : theme.primary}
