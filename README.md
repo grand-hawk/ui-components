@@ -10,7 +10,7 @@ Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components libr
 - [x] Stack
 - [x] ThemeProvider
 - [x] Typography
-- [ ] Button
+- [x] Button
 - [ ] Slider
 - [ ] Select
 - [ ] Card

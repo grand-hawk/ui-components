@@ -5,6 +5,8 @@ export interface Theme {
   overlay: Color3;
   borders: Color3;
   accent: Color3;
+  font: Enum.Font;
+  fontBold: Enum.Font;
 }
 
 export * from './dark';

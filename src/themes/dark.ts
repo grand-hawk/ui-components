@@ -7,4 +7,6 @@ export const darkTheme: Theme = {
   overlay: Color3.fromRGB(28, 30, 34),
   borders: Color3.fromRGB(38, 41, 45),
   accent: Color3.fromRGB(97, 0, 255),
+  font: Enum.Font.Arial,
+  fontBold: Enum.Font.ArialBold,
 };

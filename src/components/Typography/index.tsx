@@ -1,17 +1,19 @@
 import React from '@rbxts/react';
 
+import { Box } from 'components/Box';
 import { useTheme } from 'components/ThemeProvider';
 
-export interface TypographyProps
-  extends Partial<InstanceProperties<TextLabel>> {}
+import type { PropsWithChildren } from '@rbxts/react';
+import type { BoxProps } from 'components/Box';
 
-export function Typography(props: TypographyProps) {
+export interface TypographyProps extends BoxProps<'textlabel'> {}
+
+export function Typography(props: PropsWithChildren<TypographyProps>) {
   const theme = useTheme();
 
   return (
-    <textlabel
-      AutomaticSize={props.Size ? undefined : 'XY'}
-      BackgroundTransparency={props.BackgroundColor3 ? 0 : 1}
+    <Box
+      Component="textlabel"
       TextColor3={theme.primary}
       TextSize={16}
       {...props}

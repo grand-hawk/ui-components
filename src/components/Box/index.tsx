@@ -1,6 +1,18 @@
-import React from '@rbxts/react';
+import React, { createElement, Fragment } from '@rbxts/react';
 
-export interface BoxProps extends Partial<InstanceProperties<Frame>> {
+import type {
+  InstanceProps,
+  PropsWithChildren,
+  PropsWithoutRef,
+  Ref,
+} from '@rbxts/react';
+
+export interface BaseBoxProps
+  extends PropsWithoutRef<InstanceProps<GuiObject>> {
+  Component?: keyof JSX.IntrinsicElements;
+
+  Ref?: Ref<unknown>;
+
   Padding?: number;
 
   PaddingX?: number;
@@ -20,7 +32,18 @@ export interface BoxProps extends Partial<InstanceProperties<Frame>> {
   VerticalAlignment?: Enum.VerticalAlignment;
 }
 
-export function Box(props: React.PropsWithChildren<BoxProps>) {
+export type BoxProps<T extends keyof JSX.IntrinsicElements = 'frame'> =
+  JSX.IntrinsicElements[T] & BaseBoxProps;
+
+export function Box<T extends keyof JSX.IntrinsicElements>(
+  props: PropsWithChildren<BoxProps<T>>,
+) {
+  const component = props.Component ?? 'frame';
+  props.Component = undefined;
+
+  const ref = props.Ref;
+  props.Ref = undefined;
+
   const padding = props.Padding ? new UDim(0, props.Padding * 8) : undefined;
   props.Padding = undefined;
 
@@ -30,7 +53,9 @@ export function Box(props: React.PropsWithChildren<BoxProps>) {
   const paddingY = props.PaddingY ? new UDim(0, props.PaddingY * 8) : padding;
   props.PaddingY = undefined;
 
-  const borderRadius = props.BorderRadius;
+  const borderRadius = props.BorderRadius
+    ? new UDim(0, props.BorderRadius)
+    : undefined;
   props.BorderRadius = undefined;
 
   const gap = props.Gap ? props.Gap * 8 : 0;
@@ -52,13 +77,16 @@ export function Box(props: React.PropsWithChildren<BoxProps>) {
     (shouldCenter ? Enum.VerticalAlignment.Center : undefined);
   props.VerticalAlignment = undefined;
 
-  return (
-    <frame
-      AutomaticSize={props.Size ? undefined : 'XY'}
-      BackgroundTransparency={props.BackgroundColor3 ? 0 : 1}
-      BorderSizePixel={0}
-      {...props}
-    >
+  return createElement<BoxProps<T>>(
+    component,
+    {
+      AutomaticSize: props.Size ? undefined : Enum.AutomaticSize.XY,
+      BackgroundTransparency: props.BackgroundColor3 ? 0 : 1,
+      BorderSizePixel: 0,
+      ref,
+      ...props,
+    },
+    <Fragment>
       {padding || paddingX || paddingY ? (
         <uipadding
           PaddingBottom={paddingY}
@@ -68,9 +96,7 @@ export function Box(props: React.PropsWithChildren<BoxProps>) {
         />
       ) : undefined}
 
-      {borderRadius ? (
-        <uicorner CornerRadius={new UDim(0, borderRadius)} />
-      ) : undefined}
+      {borderRadius ? <uicorner CornerRadius={borderRadius} /> : undefined}
 
       <uilistlayout
         FillDirection={direction}
@@ -80,6 +106,6 @@ export function Box(props: React.PropsWithChildren<BoxProps>) {
       />
 
       {props.children}
-    </frame>
+    </Fragment>,
   );
 }
