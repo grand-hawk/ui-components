@@ -9,7 +9,7 @@ Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components libr
 ## Installation
 
 ```bash
-npm i @rbxts/grand-hawk-ui-components
+npm i @grand-hawk/ui-components
 ```
 
 ## Documentation
