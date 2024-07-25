@@ -17,6 +17,8 @@ export interface BaseBoxProps
 
   CornerProps?: InstanceProps<UICorner>;
 
+  StrokeProps?: InstanceProps<UIStroke>;
+
   ListLayoutProps?: InstanceProps<UIListLayout>;
 
   Padding?: number;
@@ -36,14 +38,20 @@ export interface BaseBoxProps
   HorizontalAlignment?: Enum.HorizontalAlignment;
 
   VerticalAlignment?: Enum.VerticalAlignment;
+
+  BorderColor3?: Color3;
+
+  BorderThickness?: number;
 }
 
 export type BoxProps<T extends keyof JSX.IntrinsicElements = 'frame'> =
   JSX.IntrinsicElements[T] & BaseBoxProps;
 
 export function Box<T extends keyof JSX.IntrinsicElements>(
-  props: PropsWithChildren<BoxProps<T>>,
+  componentProps: PropsWithChildren<BoxProps<T>>,
 ) {
+  const props = { ...componentProps };
+
   const component = props.Component ?? 'frame';
   props.Component = undefined;
 
@@ -55,6 +63,9 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
 
   const cornerProps = props.CornerProps;
   props.CornerProps = undefined;
+
+  const strokeProps = props.StrokeProps;
+  props.StrokeProps = undefined;
 
   const listLayoutProps = props.ListLayoutProps;
   props.ListLayoutProps = undefined;
@@ -92,6 +103,12 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
     (shouldCenter ? Enum.VerticalAlignment.Center : undefined);
   props.VerticalAlignment = undefined;
 
+  const borderColor3 = props.BorderColor3;
+  props.BorderColor3 = undefined;
+
+  const borderThickness = props.BorderThickness;
+  props.BorderThickness = undefined;
+
   return createElement<BoxProps<T>>(
     component,
     {
@@ -114,6 +131,16 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
 
       {borderRadius || cornerProps ? (
         <uicorner CornerRadius={borderRadius} {...cornerProps} />
+      ) : undefined}
+
+      {borderColor3 || borderThickness || strokeProps ? (
+        <uistroke
+          ApplyStrokeMode={Enum.ApplyStrokeMode.Border}
+          Color={borderColor3}
+          Enabled
+          Thickness={borderThickness}
+          {...strokeProps}
+        />
       ) : undefined}
 
       <uilistlayout

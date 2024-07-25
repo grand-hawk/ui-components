@@ -116,6 +116,7 @@
     "no-shadow": "off",
     "roblox-ts/lua-truthiness": "off",
     "react/jsx-fragments": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   }
 }

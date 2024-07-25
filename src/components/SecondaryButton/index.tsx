@@ -1,36 +1,35 @@
-import React, { useEffect, useRef, useState } from '@rbxts/react';
+import React, { useState } from '@rbxts/react';
 
 import { Button, type ButtonProps } from 'components/Button';
 import { useTheme } from 'components/ThemeProvider';
-import { mergeProps } from 'helpers';
+import { mergeFunctions, mergeProps } from 'helpers';
 
-import type { InstanceProps, PropsWithChildren } from '@rbxts/react';
+import type { PropsWithChildren } from '@rbxts/react';
 
-export interface SecondaryButtonProps extends ButtonProps {
-  StrokeProps?: InstanceProps<UIStroke>;
-}
+export interface SecondaryButtonProps extends ButtonProps {}
 
 export function SecondaryButton(
   props: PropsWithChildren<SecondaryButtonProps>,
 ) {
   const theme = useTheme();
-  const buttonRef = useRef<TextButton>(undefined);
   const [hover, setHover] = useState<boolean>(false);
-
-  useEffect(() => {
-    const button = buttonRef.current;
-    if (!button) return;
-
-    button.MouseEnter.Connect(() => setHover(true));
-    button.MouseLeave.Connect(() => setHover(false));
-  });
 
   return (
     <Button
       BackgroundColor3={theme.background}
-      Ref={buttonRef}
       TextColor3={theme.primary}
       {...props}
+      Event={{
+        ...props.Event,
+        MouseEnter: mergeFunctions(
+          () => setHover(true),
+          props.Event?.MouseEnter,
+        ),
+        MouseLeave: mergeFunctions(
+          () => setHover(false),
+          props.Event?.MouseLeave,
+        ),
+      }}
       StrokeProps={mergeProps(
         {
           Color: hover ? theme.primary : theme.primary60,

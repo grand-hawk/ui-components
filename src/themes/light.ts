@@ -6,7 +6,7 @@ export const lightTheme: Theme = {
   background: Color3.fromRGB(255, 255, 255),
   borders: Color3.fromRGB(227, 229, 234),
   overlay: Color3.fromRGB(250, 250, 250),
-  accent: Color3.fromRGB(0, 255, 224),
+  accent: Color3.fromRGB(67, 147, 228),
   font: Enum.Font.Arial,
   fontBold: Enum.Font.ArialBold,
 };
