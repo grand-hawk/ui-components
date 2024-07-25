@@ -6,6 +6,16 @@ Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components libr
 ![image](https://github.com/user-attachments/assets/0d36dfb5-0af2-4d59-993c-81a82fc820fa)
 ![image](https://github.com/user-attachments/assets/57399a50-eef5-49f7-9778-471ce23bb9a7)
 
+## Installation
+
+```bash
+npm i @rbxts/grand-hawk-ui-components
+```
+
+## Documentation
+
+See the Typedoc [here](https://grand-hawk.github.io/ui-components).
+
 ## Component progress
 
 - [x] Box
