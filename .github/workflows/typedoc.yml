@@ -9,7 +9,8 @@ jobs:
   typedoc:
     permissions:
       id-token: write
-      packages: write
+      contents: write
+      pages: write
 
     runs-on: ubuntu-latest
 
