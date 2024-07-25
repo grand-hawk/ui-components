@@ -9,5 +9,6 @@
   },
   "files.eol": "\n",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.disableAutomaticTypeAcquisition": true
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "github-actions.use-enterprise": true
 }
