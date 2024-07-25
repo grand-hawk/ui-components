@@ -6,5 +6,5 @@
   "out": "docs",
   "plugin": ["typedoc-material-theme"],
   "skipErrorChecking": true,
-  "themeColor": "#ff4242"
+  "themeColor": "#201f23"
 }
