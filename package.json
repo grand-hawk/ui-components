@@ -1,5 +1,5 @@
 {
-  "name": "ui-components",
+  "name": "@grand-hawk/ui-components",
   "version": "0.0.1",
   "author": "Astrid <git@astrid.email>",
   "main": "dist/init.lua",
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "rbxtsc --type package && tsup src/index.ts --dts-only",
-    "watch": "npm run build -- -w",
+    "watch": "rbxtsc --type model -w",
     "format": "prettier -w .",
     "lint": "eslint .",
     "typedoc": "typedoc"
