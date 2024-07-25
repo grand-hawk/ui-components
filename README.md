@@ -11,7 +11,7 @@ Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components libr
 
 - `npm i @grand-hawk/ui-components`
 - Add `@grand-hawk` to your typeRoots
-- Add the `@grand-hawk` scope to your Rojo xxx.project.json
+- Add the `@grand-hawk` scope to your Rojo default.project.json
 
 ## Documentation
 
