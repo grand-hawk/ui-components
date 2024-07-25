@@ -9,7 +9,10 @@ jobs:
   build_and_publish:
     permissions:
       id-token: write
+      packages: write
+
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
