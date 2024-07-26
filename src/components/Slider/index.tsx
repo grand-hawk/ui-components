@@ -14,11 +14,11 @@ export interface SliderProps extends BoxProps {
 
   DefaultValue?: ProgressBarProps['Value'];
 
+  SliderChanged?: (value: number) => unknown;
+
   HandleProps?: BoxProps<'textbutton'>;
 
   ProgressBarProps?: ProgressBarProps;
-
-  SliderChanged?: (value: number) => unknown;
 }
 
 export function Slider(componentProps: PropsWithChildren<SliderProps>) {
@@ -30,14 +30,14 @@ export function Slider(componentProps: PropsWithChildren<SliderProps>) {
   const defaultValue = props.DefaultValue;
   props.DefaultValue = undefined;
 
+  const sliderChanged = props.SliderChanged;
+  props.SliderChanged = undefined;
+
   const handleProps = props.HandleProps;
   props.HandleProps = undefined;
 
   const progressBarProps = props.ProgressBarProps;
   props.ProgressBarProps = undefined;
-
-  const sliderChanged = props.SliderChanged;
-  props.SliderChanged = undefined;
 
   const theme = useTheme();
   const [isDragging, setIsDragging] = useState<boolean>(false);
