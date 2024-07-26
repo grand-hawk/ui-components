@@ -11,9 +11,5 @@ export interface SheetProps extends BoxProps {}
 export function Sheet(props: PropsWithChildren<SheetProps>) {
   const theme = useTheme();
 
-  return (
-    <Box BackgroundColor3={theme.overlay} {...props}>
-      {props.children}
-    </Box>
-  );
+  return <Box BackgroundColor3={theme.overlay} {...props} />;
 }

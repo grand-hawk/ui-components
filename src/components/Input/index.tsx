@@ -44,7 +44,9 @@ export function Input(componentProps: PropsWithChildren<InputProps>) {
       {...props}
       Event={{
         ...props.Event,
+
         Focused: mergeFunctions(() => setFocused(true), props.Event?.Focused),
+
         FocusLost: mergeFunctions(
           () => setFocused(false),
           props.Event?.FocusLost,

@@ -1,9 +1,9 @@
-export function mergeFunctions(
-  ...eventHandlers: Array<((...args: never[]) => unknown) | undefined>
+export function mergeFunctions<T extends (...args: never[]) => unknown>(
+  ...eventHandlers: Array<T | undefined>
 ): () => void {
-  const events: Array<() => unknown> = (eventHandlers as defined[]).filter(
-    (v) => typeIs(v, 'function'),
-  );
+  const events: Array<(...args: never[]) => unknown> = (
+    eventHandlers as defined[]
+  ).filter((v) => typeIs(v, 'function'));
 
-  return () => events.forEach((event) => event());
+  return (...args: never[]) => events.forEach((event) => event(...args));
 }

@@ -34,10 +34,12 @@ export function Button(componentProps: PropsWithChildren<ButtonProps>) {
       {...props}
       Event={{
         ...props.Event,
+
         MouseEnter: mergeFunctions(
           () => setHover(true),
           props.Event?.MouseEnter,
         ),
+
         MouseLeave: mergeFunctions(
           () => setHover(false),
           props.Event?.MouseLeave,
@@ -50,6 +52,8 @@ export function Button(componentProps: PropsWithChildren<ButtonProps>) {
         Thickness={hover ? 1 : 0}
         {...strokeProps}
       />
+
+      {props.children}
     </Box>
   );
 }

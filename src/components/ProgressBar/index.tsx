@@ -6,8 +6,10 @@ import { useTheme } from 'components/ThemeProvider';
 import type { PropsWithChildren } from '@rbxts/react';
 import type { BoxProps } from 'components/Box';
 
-export interface ProgressBarProps extends BoxProps {
+export interface ProgressBarProps extends BoxProps<'canvasgroup'> {
   Value?: number;
+
+  BorderRadius?: number;
 
   IndicatorProps?: BoxProps;
 
@@ -22,6 +24,9 @@ export function ProgressBar(
   const value = props.Value ?? 0;
   props.Value = undefined;
 
+  const borderRadius = props.BorderRadius ?? 8;
+  props.BorderRadius = undefined;
+
   const indicatorProps = props.IndicatorProps;
   props.IndicatorProps = undefined;
 
@@ -34,24 +39,30 @@ export function ProgressBar(
     <Box
       BackgroundColor3={theme.primary60}
       BackgroundTransparency={0.8}
-      BorderRadius={8}
+      BorderRadius={borderRadius}
       ClipsDescendants
+      Component="canvasgroup"
       Size={new UDim2(1, 0, 0, 12)}
       {...props}
     >
-      <Box
-        BackgroundColor3={theme.accent}
-        BorderRadius={8}
-        HorizontalAlignment={Enum.HorizontalAlignment.Right}
-        Size={UDim2.fromScale(value / 100, 1)}
-        {...indicatorProps}
-      >
+      <Box Component="canvasgroup" Size={UDim2.fromScale(1, 1)}>
         <Box
           BackgroundColor3={theme.accent}
-          Size={UDim2.fromScale(0.5, 1)}
-          {...innerIndicatorProps}
-        />
+          BorderRadius={borderRadius}
+          ClipsDescendants
+          HorizontalAlignment={Enum.HorizontalAlignment.Right}
+          Size={UDim2.fromScale(value / 100, 1)}
+          {...indicatorProps}
+        >
+          <Box
+            BackgroundColor3={theme.accent}
+            Size={UDim2.fromScale(0.5, 1)}
+            {...innerIndicatorProps}
+          />
+        </Box>
       </Box>
+
+      {props.children}
     </Box>
   );
 }

@@ -42,6 +42,8 @@ export interface BaseBoxProps
   BorderColor3?: Color3;
 
   BorderThickness?: number;
+
+  DisableListLayout?: boolean;
 }
 
 export type BoxProps<T extends keyof JSX.IntrinsicElements = 'frame'> =
@@ -109,6 +111,9 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
   const borderThickness = props.BorderThickness;
   props.BorderThickness = undefined;
 
+  const disableListLayout = props.DisableListLayout ?? false;
+  props.DisableListLayout = undefined;
+
   return createElement<BoxProps<T>>(
     component,
     {
@@ -143,13 +148,15 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
         />
       ) : undefined}
 
-      <uilistlayout
-        FillDirection={direction}
-        HorizontalAlignment={horizontalAlignment}
-        Padding={new UDim(0, gap)}
-        VerticalAlignment={verticalAlignment}
-        {...listLayoutProps}
-      />
+      {!disableListLayout ? (
+        <uilistlayout
+          FillDirection={direction}
+          HorizontalAlignment={horizontalAlignment}
+          Padding={new UDim(0, gap)}
+          VerticalAlignment={verticalAlignment}
+          {...listLayoutProps}
+        />
+      ) : undefined}
 
       {props.children}
     </Fragment>,

@@ -21,10 +21,12 @@ export function SecondaryButton(
       {...props}
       Event={{
         ...props.Event,
+
         MouseEnter: mergeFunctions(
           () => setHover(true),
           props.Event?.MouseEnter,
         ),
+
         MouseLeave: mergeFunctions(
           () => setHover(false),
           props.Event?.MouseLeave,
