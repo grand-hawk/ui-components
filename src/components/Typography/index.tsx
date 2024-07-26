@@ -16,6 +16,7 @@ export function Typography(props: PropsWithChildren<TypographyProps>) {
       Component="textlabel"
       TextColor3={theme.primary}
       TextSize={16}
+      TextXAlignment={Enum.TextXAlignment.Left}
       {...props}
     />
   );
