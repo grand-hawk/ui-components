@@ -25,7 +25,6 @@ See the Typedoc [here](https://grand-hawk.github.io/ui-components).
 - [x] Box
 - [x] Sheet
 - [x] Stack
-- [x] ThemeProvider
 - [x] Typography
 - [x] Button
 - [x] Progress bar
