@@ -4,6 +4,7 @@ import { Box } from 'components/Box';
 import { ProgressBar, type ProgressBarProps } from 'components/ProgressBar';
 import { useTheme } from 'components/ThemeProvider';
 import { mergeFunctions } from 'helpers';
+import { setMouseIcon, SystemCursors } from 'utils';
 
 import type { PropsWithChildren } from '@rbxts/react';
 import type { BoxProps } from 'components/Box';
@@ -65,7 +66,11 @@ export function Slider(componentProps: PropsWithChildren<SliderProps>) {
               if (sliderChanged) sliderChanged(newValue);
             },
 
-            MouseButton1Up: () => setIsDragging(false),
+            MouseButton1Up: () => {
+              setIsDragging(false);
+
+              setMouseIcon(SystemCursors.Arrow);
+            },
           }}
           Selectable={false}
           Size={UDim2.fromOffset(math.huge, math.huge)}
@@ -97,12 +102,24 @@ export function Slider(componentProps: PropsWithChildren<SliderProps>) {
         Event={{
           ...handleProps?.Event,
 
-          MouseButton1Down: mergeFunctions<
-            (rbx: TextButton, x: number, y: number) => unknown
-          >(() => {
+          MouseButton1Down: mergeFunctions(() => {
             if (isDragging) return;
             setIsDragging(true);
+
+            setMouseIcon(SystemCursors.ClosedHand);
           }, handleProps?.Event?.MouseButton1Down),
+
+          MouseEnter: mergeFunctions(() => {
+            if (isDragging) return;
+
+            setMouseIcon(SystemCursors.OpenHand);
+          }, handleProps?.Event?.MouseEnter),
+
+          MouseLeave: mergeFunctions(() => {
+            if (isDragging) return;
+
+            setMouseIcon(SystemCursors.Arrow);
+          }, handleProps?.Event?.MouseEnter),
         }}
       />
 

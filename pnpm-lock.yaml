@@ -14,6 +14,9 @@ importers:
       '@rbxts/react-roblox':
         specifier: ^0.4.0
         version: 0.4.0
+      '@rbxts/services':
+        specifier: ^1.5.4
+        version: 1.5.4
       '@rbxts/ui-labs':
         specifier: ^2.1.1
         version: 2.1.1
@@ -323,6 +326,9 @@ packages:
 
   '@rbxts/react@0.4.0':
     resolution: {integrity: sha512-yhqXzfH5YpwfZyiWipQMfQsI//2sC86Jqn2rMkP+l1y4CfhCvoYxpaI5qS7Xum9F+DsBHiwJNeUxm2V2LzXW0A==}
+
+  '@rbxts/services@1.5.4':
+    resolution: {integrity: sha512-Klh+gRIT8zy3xRTX1YD6FZ9nAMzkzPLTHmciigt59PEF7PJXo31CF0IU0RegQ7VSMrz1iOnXwxbIwy3htcMfOA==}
 
   '@rbxts/types@1.0.791':
     resolution: {integrity: sha512-kKivHGm9n12L7AlKUH7KfBI7dJTZaWs21rqTpzhcknn7mqjpkZxcn6RDaIIFl3x7mMnvUsJ5amVL25zd7xkTug==}
@@ -2379,6 +2385,8 @@ snapshots:
   '@rbxts/react@0.4.0':
     dependencies:
       '@rbxts/react-vendor': 0.4.0
+
+  '@rbxts/services@1.5.4': {}
 
   '@rbxts/types@1.0.791': {}
 
