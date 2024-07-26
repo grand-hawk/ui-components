@@ -31,6 +31,7 @@ See the Typedoc [here](https://grand-hawk.github.io/ui-components).
 - [x] Input
 - [ ] Select
 - [ ] Card
+- [x] Checkbox
 
 ## Storyboard
 
