@@ -6,6 +6,7 @@ Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components libr
 ![image](https://github.com/user-attachments/assets/0d36dfb5-0af2-4d59-993c-81a82fc820fa)
 ![image](https://github.com/user-attachments/assets/57399a50-eef5-49f7-9778-471ce23bb9a7)
 ![image](https://github.com/user-attachments/assets/53e3655d-6bd6-4a52-b1eb-f59f60b6baf6)
+![image](https://github.com/user-attachments/assets/e5cc302d-7cbc-4cd8-8cb8-90db8d573d7d)
 
 ## Installation
 
@@ -26,7 +27,7 @@ See the Typedoc [here](https://grand-hawk.github.io/ui-components).
 - [x] Typography
 - [x] Button
 - [x] Progress bar
-- [ ] Slider
+- [x] Slider
 - [x] Input
 - [ ] Select
 - [ ] Card
