@@ -21,6 +21,7 @@ const story: FunctionStory = (target) => {
           Size={new UDim2(0, 500, 0, 0)}
         >
           <ProgressBar Value={0} />
+
           <ProgressBar Value={25} />
         </Sheet>
 
@@ -32,6 +33,7 @@ const story: FunctionStory = (target) => {
             Size={new UDim2(0, 500, 0, 0)}
           >
             <ProgressBar Value={75} />
+
             <ProgressBar Value={100} />
           </Sheet>
         </ThemeProvider>
