@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "rbxtsc --type package && tsup src/index.ts --dts-only",
-    "watch": "rbxtsc --type model -w",
+    "watch": "rbxtsc --type game -w",
     "format": "prettier -w .",
     "lint": "eslint src",
     "typedoc": "typedoc"
