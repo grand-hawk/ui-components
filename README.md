@@ -25,6 +25,7 @@ See the Typedoc [here](https://grand-hawk.github.io/ui-components).
 - [x] ThemeProvider
 - [x] Typography
 - [x] Button
+- [x] Progress bar
 - [ ] Slider
 - [x] Input
 - [ ] Select
