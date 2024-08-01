@@ -1,7 +1,7 @@
 # [@grand-hawk/ui-components](https://www.npmjs.com/package/@grand-hawk/ui-components)
 
 UI component library made with [roblox-ts](https://roblox-ts.com/) and [Roact](https://github.com/Roblox/react-lua).
-Inspired by [Joy UI](https://mui.com/joy-ui), Edgar López's [UI components library](https://www.figma.com/community/file/945880487009800014) and [portfolio UI kit](https://www.figma.com/community/file/951948937037406468).
+Inspired by [Joy UI](https://mui.com/joy-ui/getting-started/), Edgar López's [UI components library](https://www.figma.com/community/file/945880487009800014) and [portfolio UI kit](https://www.figma.com/community/file/951948937037406468).
 
 <img src="https://github.com/user-attachments/assets/0d36dfb5-0af2-4d59-993c-81a82fc820fa" width="30%"/>
 <img src="https://github.com/user-attachments/assets/6de46531-31f7-4fd7-a8b5-208b2deb5610" width="30%"/>
