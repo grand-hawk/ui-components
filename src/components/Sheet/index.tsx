@@ -6,10 +6,17 @@ import { useTheme } from 'components/ThemeProvider';
 import type { PropsWithChildren } from '@rbxts/react';
 import type { BoxProps } from 'components/Box';
 
-export interface SheetProps extends BoxProps {}
+export interface SheetProps extends BoxProps {
+  Background?: boolean;
+}
 
-export function Sheet(props: PropsWithChildren<SheetProps>) {
+export function Sheet(componentProps: PropsWithChildren<SheetProps>) {
   const theme = useTheme();
 
-  return <Box BackgroundColor3={theme.overlay} {...props} />;
+  const props = componentProps;
+
+  const background = props.Background ? theme.background : theme.overlay;
+  props.Background = undefined;
+
+  return <Box BackgroundColor3={background} {...props} />;
 }
