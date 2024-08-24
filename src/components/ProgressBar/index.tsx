@@ -37,7 +37,7 @@ export function ProgressBar(
 
   return (
     <Box
-      BackgroundColor3={theme.primary60}
+      BackgroundColor3={theme.textSecondary}
       BackgroundTransparency={0.8}
       BorderRadius={borderRadius}
       ClipsDescendants
@@ -47,7 +47,7 @@ export function ProgressBar(
     >
       <Box Component="canvasgroup" Size={UDim2.fromScale(1, 1)}>
         <Box
-          BackgroundColor3={theme.accent}
+          BackgroundColor3={theme.accentPrimary}
           BorderRadius={borderRadius}
           ClipsDescendants
           HorizontalAlignment={Enum.HorizontalAlignment.Right}
@@ -55,7 +55,7 @@ export function ProgressBar(
           {...indicatorProps}
         >
           <Box
-            BackgroundColor3={theme.accent}
+            BackgroundColor3={theme.accentPrimary}
             Size={UDim2.fromScale(0.5, 1)}
             {...innerIndicatorProps}
           />

@@ -23,8 +23,10 @@ export function Input(componentProps: PropsWithChildren<InputProps>) {
   return (
     <Box
       AutomaticSize="Y"
-      BackgroundColor3={theme.overlay}
-      BorderColor3={focused && !disabled ? theme.accent : theme.borders}
+      BackgroundColor3={theme.backgroundOverlay}
+      BorderColor3={
+        focused && !disabled ? theme.accentPrimary : theme.bordersPrimary
+      }
       BorderRadius={8}
       BorderThickness={2}
       ClearTextOnFocus={false}
@@ -32,11 +34,11 @@ export function Input(componentProps: PropsWithChildren<InputProps>) {
       Component="textbox"
       PaddingX={2}
       PaddingY={1.5}
-      PlaceholderColor3={theme.primary60}
+      PlaceholderColor3={theme.textSecondary}
       PlaceholderText=""
       Size={UDim2.fromScale(1, 0)}
       Text=""
-      TextColor3={disabled ? theme.primary60 : theme.primary}
+      TextColor3={disabled ? theme.textSecondary : theme.textPrimary}
       TextEditable={!disabled}
       TextSize={12}
       TextTransparency={disabled ? 0.25 : 0}

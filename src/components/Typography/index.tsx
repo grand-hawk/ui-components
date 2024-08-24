@@ -14,7 +14,7 @@ export function Typography(props: PropsWithChildren<TypographyProps>) {
   return (
     <Box
       Component="textlabel"
-      TextColor3={theme.primary}
+      TextColor3={theme.textPrimary}
       TextSize={12}
       TextXAlignment={Enum.TextXAlignment.Left}
       {...props}

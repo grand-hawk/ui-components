@@ -41,7 +41,9 @@ export function Checkbox(componentProps: PropsWithChildren<CheckboxProps>) {
 
   return (
     <Button
-      BackgroundColor3={checkboxValue ? theme.accent : theme.overlay}
+      BackgroundColor3={
+        checkboxValue ? theme.accentPrimary : theme.backgroundOverlay
+      }
       BorderRadius={4}
       DisableListLayout
       PaddingX={0}
@@ -60,7 +62,7 @@ export function Checkbox(componentProps: PropsWithChildren<CheckboxProps>) {
         }, props.Event?.MouseButton1Click),
       }}
       StrokeProps={{
-        Color: checkboxValue ? theme.accent : theme.borders,
+        Color: checkboxValue ? theme.accentPrimary : theme.bordersPrimary,
         Thickness: 2,
 
         ...props.StrokeProps,

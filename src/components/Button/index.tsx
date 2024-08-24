@@ -23,13 +23,13 @@ export function Button(componentProps: PropsWithChildren<ButtonProps>) {
   return (
     <Box
       AutoButtonColor={false}
-      BackgroundColor3={hover ? theme.background : theme.primary}
+      BackgroundColor3={hover ? theme.backgroundPrimary : theme.textPrimary}
       BorderRadius={25}
       Component="textbutton"
       Font={theme.fontBold}
       PaddingX={4}
       PaddingY={1.5}
-      TextColor3={hover ? theme.primary : theme.background}
+      TextColor3={hover ? theme.textPrimary : theme.backgroundPrimary}
       TextSize={16}
       {...props}
       Event={{
@@ -48,7 +48,7 @@ export function Button(componentProps: PropsWithChildren<ButtonProps>) {
     >
       <uistroke
         ApplyStrokeMode={Enum.ApplyStrokeMode.Border}
-        Color={theme.primary}
+        Color={theme.textPrimary}
         Thickness={hover ? 1 : 0}
         {...strokeProps}
       />

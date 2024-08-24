@@ -75,7 +75,7 @@ export function Slider(componentProps: PropsWithChildren<SliderProps>) {
       )}
 
       <ProgressBar
-        BackgroundColor3={theme.accent}
+        BackgroundColor3={theme.accentPrimary}
         Size={UDim2.fromScale(1, 1)}
         Value={!value ? internalValue : value}
         {...progressBarProps}
@@ -84,7 +84,7 @@ export function Slider(componentProps: PropsWithChildren<SliderProps>) {
       <Box
         AnchorPoint={new Vector2(0.25, 0.25)}
         AutoButtonColor={false}
-        BackgroundColor3={theme.accent}
+        BackgroundColor3={theme.accentPrimary}
         Component="textbutton"
         Position={new UDim2(internalValue / 100, 0, -0, 0)}
         Size={UDim2.fromOffset(16, 16)}

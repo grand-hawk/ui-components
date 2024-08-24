@@ -15,7 +15,9 @@ export function Sheet(componentProps: PropsWithChildren<SheetProps>) {
 
   const props = componentProps;
 
-  const background = props.Background ? theme.background : theme.overlay;
+  const background = props.Background
+    ? theme.backgroundPrimary
+    : theme.backgroundOverlay;
   props.Background = undefined;
 
   return <Box BackgroundColor3={background} {...props} />;

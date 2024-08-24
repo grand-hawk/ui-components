@@ -16,8 +16,8 @@ export function SecondaryButton(
 
   return (
     <Button
-      BackgroundColor3={theme.background}
-      TextColor3={theme.primary}
+      BackgroundColor3={theme.backgroundPrimary}
+      TextColor3={theme.textPrimary}
       {...props}
       Event={{
         ...props.Event,
@@ -34,7 +34,7 @@ export function SecondaryButton(
       }}
       StrokeProps={mergeProps(
         {
-          Color: hover ? theme.primary : theme.primary60,
+          Color: hover ? theme.textPrimary : theme.textSecondary,
           Thickness: 1,
         },
         props.StrokeProps,
