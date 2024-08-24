@@ -92,17 +92,17 @@ export function Box<T extends keyof JSX.IntrinsicElements>(
   const direction = props.Direction ?? Enum.FillDirection.Vertical;
   props.Direction = undefined;
 
-  const shouldCenter = props.Center;
+  const center = props.Center;
   props.Center = undefined;
 
   const horizontalAlignment =
     props.HorizontalAlignment ??
-    (shouldCenter ? Enum.HorizontalAlignment.Center : undefined);
+    (center ? Enum.HorizontalAlignment.Center : undefined);
   props.HorizontalAlignment = undefined;
 
   const verticalAlignment =
     props.VerticalAlignment ??
-    (shouldCenter ? Enum.VerticalAlignment.Center : undefined);
+    (center ? Enum.VerticalAlignment.Center : undefined);
   props.VerticalAlignment = undefined;
 
   const borderColor3 = props.BorderColor3;
