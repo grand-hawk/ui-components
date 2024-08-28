@@ -13,7 +13,7 @@ export interface SheetProps extends BoxProps {
 export function Sheet(componentProps: PropsWithChildren<SheetProps>) {
   const theme = useTheme();
 
-  const props = componentProps;
+  const props = { ...componentProps };
 
   const background = props.Background
     ? theme.backgroundPrimary

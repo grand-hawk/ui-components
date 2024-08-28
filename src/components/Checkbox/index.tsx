@@ -19,7 +19,7 @@ export interface CheckboxProps extends ButtonProps {
 }
 
 export function Checkbox(componentProps: PropsWithChildren<CheckboxProps>) {
-  const props = componentProps;
+  const props = { ...componentProps };
 
   const value = props.Value;
   props.Value = undefined;
